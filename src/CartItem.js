@@ -33,7 +33,12 @@ class CartItem extends React.Component{
     //          qty:this.state.qty -1
     //      })
     //  }
-      decreaseQuantity = () =>{    //when prev state require funtion form  
+      decreaseQuantity = () =>{  
+          //when prev state require funtion form  
+          const {qty} =this.state;
+          if(qty===0){
+              return;
+          }
           this.setState((prevState)=>{
               return{
                 qty:prevState.qty -1
