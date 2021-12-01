@@ -3,7 +3,7 @@ import React from 'react';
 
 
 
-class CartItem extends React.Component{
+const CartItem = (props) =>{
   
    
     //  increaseQuantity = () =>{
@@ -42,14 +42,14 @@ class CartItem extends React.Component{
 
 
 
-     render(){
-         const {price,title,qty} = this.props.product;//object destructring//props from cart item 
-         const {product,onIncreasQuantity,onDecreasQuantity, onDeleteProduct} = this.props;
+    
+         const {price,title,qty} = props.product;//object destructring//props from cart item 
+         const {product,onIncreasQuantity,onDecreasQuantity, onDeleteProduct} = props;
 
          return(
             <div className="cart-item" >
                <div className="left-block">
-                <img style={styles.image}/>
+                <img style={styles.image} src={product.img}/>
                  </div>
                  <div className="right-block">
                      <div style={{ fontSize:25}}>{title}</div>
@@ -79,7 +79,7 @@ class CartItem extends React.Component{
 
 
          );
-     }
+     
 }
 const styles = {
     image:{
